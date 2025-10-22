@@ -86,13 +86,46 @@ class ProductController {
   }
   
 
-  async getOrderStatus(req, res, next) {
-    const { orderId } = req.params;
+  // async getOrderStatus(req, res, next) {
+  //   const { orderId } = req.params;
+  //   const order = this.ordersMap.get(orderId);
+  //   if (!order) {
+  //     return res.status(404).json({ message: 'Order not found' });
+  //   }
+  //   return res.status(200).json(order);
+  // }
+  
+  // async getOrderStatus(req, res, next)
+  // {
+  //   const {orderId} = req.params;
+  //   const order = this.ordersMap.get(orderId);
+  //   if (!order)
+  //   {
+  //     return res.status(404).json({message: 'Order not found'});
+  //   }
+  //   return res.status(200).json(order);
+  // }
+
+    // async getOrderStatus(req, res, next)
+    // {
+    //   const {orderId} = req.params;
+    //   const order = this.ordersMap.get(orderId);
+    //   if(!order)
+    //   {
+    //     return res.status(404).json({Message: 'Order not found'})
+    //   }
+    //   return res.status(200).json(order);
+    // }
+
+  async getOrderStatus(req, res, next)
+  {
+    const {orderId} = req.params;
     const order = this.ordersMap.get(orderId);
-    if (!order) {
-      return res.status(404).json({ message: 'Order not found' });
+    if(!order)
+    {
+      return res.status(404).json({Message: 'Order not found'});
     }
-    return res.status(200).json(order);
+    return res.status(200).json(order)
   }
 
   async getProducts(req, res, next) {
@@ -112,3 +145,4 @@ class ProductController {
 }
 
 module.exports = ProductController;
+
